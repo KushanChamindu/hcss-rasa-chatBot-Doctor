@@ -1,0 +1,188 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- greet_patient
+- CKD
+- deny_report
+- confirm_report
+- Diabetes
+- my_age_is:
+    use_entities:
+    - AGE
+- my_bp_is:
+    use_entities:
+    - BloodPressure
+- my_al_is:
+    use_entities:
+    - Albumin
+- my_pcc_is:
+    use_entities:
+    - PusCellClumps
+- my_bgr_is:
+    use_entities:
+    - BloodGlucoseRandom
+- my_bu_is:
+    use_entities:
+    - BloodUrea
+- my_sod_is:
+    use_entities:
+    - Sodium
+- my_pot_is:
+    use_entities:
+    - Potassium
+- my_hemo_is:
+    use_entities:
+    - Hemoglobin
+- my_rbcc_is:
+    use_entities:
+    - RedBloodCellCount
+- my_dm_is:
+    use_entities:
+    - DiabetesMellitus
+- my_appet_is:
+    use_entities:
+    - Appetite
+entities:
+- AGE
+- BloodPressure
+- Albumin
+- PusCellClumps
+- BloodGlucoseRandom
+- BloodUrea
+- Sodium
+- Potassium
+- Hemoglobin
+- RedBloodCellCount
+- DiabetesMellitus
+- Appetite
+slots:
+  AGE:
+    type: unfeaturized
+  Albumin:
+    type: unfeaturized
+  Appetite:
+    type: unfeaturized
+  BloodGlucoseRandom:
+    type: unfeaturized
+  BloodPressure:
+    type: unfeaturized
+  BloodUrea:
+    type: unfeaturized
+  DiabetesMellitus:
+    type: unfeaturized
+  Hemoglobin:
+    type: unfeaturized
+  Potassium:
+    type: unfeaturized
+  PusCellClumps:
+    type: unfeaturized
+  RedBloodCellCount:
+    type: unfeaturized
+  Sodium:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+  result:
+    type: text
+responses:
+  utter_ask_AGE:
+  - text: How old are you ?
+  utter_ask_BloodPressure:
+  - text: what is your normal blood pressure (mm/Hg)? Normal person healthy person
+      has 120 mm/Hg
+  utter_ask_Albumin:
+  - text: What is your Albumin level ? (0,1,2,3,4,5)
+  utter_ask_PusCellClumps:
+  - text: Did you have Pus Cell clumps? (present-1 else -0)
+  utter_ask_BloodGlucoseRandom:
+  - text: What is your Blood Glucose Random (mgs/dl)? Normal healthy person BGR is
+      140-200mg/dl
+  utter_ask_BloodUrea:
+  - text: How about your Blood Urea concentration (mgs/dl)? Normal person BU is  7
+      to 20 mg/dl
+  utter_ask_Sodium:
+  - text: How about your Sodium level (mEq/L)? A normal blood sodium level is between
+      135 and 145(mEq/L).
+  utter_ask_Potassium:
+  - text: How about your Potassium level (mEq/L)? The normal potassium level in the
+      blood is 3.5-5.0 (mEq/L).
+  utter_ask_Hemoglobin:
+  - text: How about your Hemoglobin concentration in your blood (gms)? The normal
+      range for hemoglobin is 13.5 to 17.5 grams per deciliter.
+  utter_ask_RedBloodCellCount:
+  - text: What is your Red Blood Cell Count (millions/cmm) ? The normal RBC range
+      for men is 4.7 to 6.1 millions/cmm
+  utter_ask_DiabetesMellitus:
+  - text: Did you have Diabetes Mellitus ? (present-1 else-0)
+  utter_ask_Appetite:
+  - text: How is your Appetite ? (good-1 poor-0)
+  utter_submit:
+  - text: okey
+  utter_submit_error:
+  - text: Some problem in your form!!
+  utter_greet_patient:
+  - text: hey!!  whats is the sick you want to predict?
+    buttons:
+    - title: Chronicle Kidney Disease
+      payload: /CKD
+    - title: Diabetes
+      payload: /Diabetes
+  utter_CKD:
+  - text: First you should take bllod report and urean report for us. Did you get
+      this two report ?
+  utter_deny_report:
+  - text: If you want to predict CKD you should take these two report
+  utter_confirm_report:
+  - text: Okye fine. I want to know about few informations from the report.
+  utter_Diabetes:
+  - text: Not implemted yet!!
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a your doctor.
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_greet_patient
+- utter_deny_report
+- utter_CKD
+- utter_confirm_report
+- utter_submit
+- utter_submit_error
+- action_your_num
+- utter_ask_AGE
+- utter_ask_BloodPressure
+- utter_ask_Albumin
+- utter_ask_PusCellClumps
+- utter_ask_BloodGlucoseRandom
+- utter_ask_BloodUrea
+- utter_ask_Sodium
+- utter_ask_Potassium
+- utter_ask_Hemoglobin
+- utter_ask_RedBloodCellCount
+- utter_ask_DiabetesMellitus
+- utter_ask_Appetite
+- utter_Diabetes
+forms:
+- form_info
